@@ -16,7 +16,7 @@ import (
 func main() {
 	ctx := context.Background()
 	// [START auth]
-	proj := "projectid"
+	proj := "sellersprime-146408"
 	if proj == "" {
 		fmt.Fprintf(os.Stderr, "GOOGLE_CLOUD_PROJECT environment variable must be set.\n")
 		os.Exit(1)
@@ -28,20 +28,20 @@ func main() {
 	// [END auth]
 
 	// List all the topics from the project.
-	fmt.Println("Listing all topics from the project:")
-	topics, err := list(client)
-	if err != nil {
-		log.Fatalf("Failed to list topics: %v", err)
-	}
-	for _, t := range topics {
-		fmt.Println(t)
-	}
+	//fmt.Println("Listing all topics from the project:")
+	//topics, err := list(client)
+	//if err != nil {
+	//	log.Fatalf("Failed to list topics: %v", err)
+	//}
+	//for _, t := range topics {
+	//	fmt.Println(t)
+	//}
 
-	const topic = "example-topic"
+	const topic = "scrapper"
 	// Create a new topic called example-topic.
-	if err := create(client, topic); err != nil {
-		log.Fatalf("Failed to create a topic: %v", err)
-	}
+	//if err := create(client, topic); err != nil {
+	//	log.Fatalf("Failed to create a topic: %v", err)
+	//}
 	for i := 0; i < 10; i++ {
 		// Publish a text message on the created topic.
 		if err := publish(client, topic, "hello world!"); err != nil {
